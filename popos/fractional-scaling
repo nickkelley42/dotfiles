@@ -1,4 +1,6 @@
 #!/bin/bash
 
 # See https://github.com/pop-os/gnome-control-center/issues/89 for details/discussion
+>&2 echo "Enabling fractional scaling might not be necessary anymore."
+>&2 echo "Check https://github.com/pop-os/gnome-control-center/issues/89"
 gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"

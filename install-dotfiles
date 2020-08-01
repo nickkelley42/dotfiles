@@ -2,6 +2,8 @@
 # Sets up config options for a new system.
 # Each set of settings is contained in a submodule; this script simply prompts the user for each script.
 
-source util-functions.sh
+DIR="$(dirname $0)"
+source "$DIR/util-functions.sh"
 
-modprompt 'Pop_OS' './popos/popos-setup'
+modprompt 'Pop_OS' "$DIR/popos/popos-setup"
+modprompt 'apt install' "$DIR/common-apt-installs/install-common"

@@ -1,0 +1,13 @@
+#!/bin/bash
+# Installs in one go most of the programs that I want on a fresh system.
+
+sudo apt-get install \
+  vim \
+  texlive-full \
+  firefox \
+  thunderbird \
+  vlc
+
+
+
+
