@@ -1,0 +1,17 @@
+#!/bin/sh
+# Sets up config options for a new system.
+# Each set of settings is contained in a submodule; this script simply prompts the user for each script.
+
+# modprompt()
+# Ask user if we should run a given script.
+# First arg is the human-friendly name for the submodule; Second arg is the path to the script.
+modprompt() {
+  printf "Run $1 setup? [y/n] "
+  read answer
+  if [ $answer = 'y' ]; then
+    echo $2
+  fi
+}
+
+modprompt 'GNOME' 'coolio'
+
