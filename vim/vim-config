@@ -1,0 +1,42 @@
+#!/bin/bash
+# Sets up VIM so we're nice and comfy
+
+DIR="$(dirname $0)"
+
+function cp_back() {
+  if [ -f "$2" ]; then
+    backup="$2.backup.$(date --iso-8601=minutes)"
+    echo "$2 exists; backing up to $backup"
+    mv "$2" "$backup"
+  fi
+  cp "$1" "$2"
+}
+
+#cp_back "$DIR/.vimrc" ~/.vimrc
+
+# folders to put VIM-generated files into, so they don't
+# clutter the working directory
+mkdir -p ~/.vim/swap
+mkdir -p ~/.vim/backup
+mkdir -p ~/.vim/undo
+
+# Filetype-specific settings
+mkdir -p ~/.vim/ftplugin
+for file in $(ls "$DIR/ftplugin"); do
+  cp_back "$DIR/ftplugin/$file" ~/.vim/ftplugin/$file
+done
+
+# Install Pathogen (VIM plugin manager)
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+# Install Pathogen plugins
+mkdir -p ~/.vim/bundle
+
+cd ~/.vim/
+git clone git://github.com/mustache/vim-mustache-handlebars.git bundle/mustache
+cd ~/.vim/bundle
+git clone https://github.com/editorconfig/editorconfig-vim.git
+git clone https://github.com/joukevandermaas/vim-ember-hbs.git
+git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
+
