@@ -7,3 +7,4 @@ source "$DIR/util-functions.sh"
 
 modprompt 'Pop_OS' "$DIR/popos/popos-setup"
 modprompt 'apt install' "$DIR/common-apt-installs/install-common"
+modprompt 'vim config' "$DIR/vim/vim-config"
