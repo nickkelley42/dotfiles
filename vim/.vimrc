@@ -3,7 +3,7 @@ syntax enable
 
 " line numbering
 set number
-set relativenumber
+"set relativenumber
 
 " tabs
 set tabstop=2
