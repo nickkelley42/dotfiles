@@ -3,7 +3,7 @@ syntax enable
 
 " line numbering
 set number
-set relativenumber
+" set relativenumber
 
 " tabs
 set tabstop=2
@@ -16,6 +16,9 @@ set foldmethod=syntax
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+
+" Mouse integration is nice sometimes
+set mouse=a
 
 " Handlebars abbreviations, see https://github.com/mustache/vim-mustache-handlebars
 let g:mustache_abbreviations = 1
