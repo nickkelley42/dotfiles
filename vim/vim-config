@@ -12,7 +12,7 @@ function cp_back() {
   cp "$1" "$2"
 }
 
-#cp_back "$DIR/.vimrc" ~/.vimrc
+cp_back "$DIR/.vimrc" ~/.vimrc
 
 # folders to put VIM-generated files into, so they don't
 # clutter the working directory
