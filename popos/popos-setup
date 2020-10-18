@@ -3,4 +3,5 @@
 
 DIR="$(dirname $0)"
 "$DIR/fractional-scaling"
+"$DIR/escape-remap"
 

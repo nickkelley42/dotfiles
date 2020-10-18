@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Remap caps log key to be escape
+
+DIR="$(dirname $0)"
+
+function cp_back() {
+  if [ -f "$2" ]; then
+    backup="$2.backup.$(date --iso-8601=minutes)"
+    echo "$2 exists; backing up to $backup"
+    mv "$2" "$backup"
+  fi
+  cp "$1" "$2"
+}
+
+setxkbmap -option caps:escape
+mkdir -p ~/.config/autostart
+cp_back "$DIR/escape-remap.desktop" ~/.config/autostart/escape-remap.desktop
+
+
