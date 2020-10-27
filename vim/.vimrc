@@ -5,6 +5,9 @@ syntax enable
 set number
 " set relativenumber
 
+" Timeout causes certain commands to be slow after pressing ESC.
+set timeoutlen=1000 ttimeoutlen=0
+
 " tabs
 set tabstop=2
 set shiftwidth=0
