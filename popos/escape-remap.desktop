@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=setxkbmap -option caps:escape
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=NK: Remap caps lock to escape
+Name=NK: Remap caps lock to escape
+Comment[en_US]=Remaps caps lock to escape
+Comment=Remaps caps lock to escape
