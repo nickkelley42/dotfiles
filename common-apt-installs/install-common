@@ -3,6 +3,7 @@
 
 sudo apt-get install \
   vim \
+  vim-gtk \
   texlive-full \
   firefox \
   thunderbird \
