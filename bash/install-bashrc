@@ -1,0 +1,7 @@
+#!/bin/bash
+# Append my bash config to the existing .bashrc
+# Create it if necessary.
+
+DIR="$(dirname $0)"
+
+cat "$DIR/.bashrc" >> ~/.bashrc
