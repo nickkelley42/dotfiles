@@ -1,5 +1,8 @@
 # Nick Kelley Dotfiles
 
+**IMPORTANT: After using this script a few times, I've found that it's a lot easier to just symlink the dotfiles from
+this repository to their respective locations. The script gets messy pretty quickly.**
+
 Hello, Future Nick. If you're reading this, you're probably on a new system trying to figure out what the hell is going 
 on. Have no fear! I'm (making an attempt at) scripting the hell out of it so all of your sweet-ass customizations can be 
 put in place easily. Simply run:
