@@ -1,15 +1,11 @@
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 eval "$(direnv hook zsh)"
-#echo $PROMPT
 
 function precmd() {
   local EXIT="$?"
 
-
-#	local RCol='\[\e[0m\]'
 	local Rcol=$'\033[00m'
 	local Red=$'\033[01;31m'
   local RedBold=$'\033[01;34m'
