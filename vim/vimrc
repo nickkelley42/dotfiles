@@ -21,7 +21,7 @@ set nofoldenable
 set foldlevel=2
 
 " line length stuff
-set colorcolumn=120
+set colorcolumn=80
 
 "filetype plugins
 filetype plugin on
