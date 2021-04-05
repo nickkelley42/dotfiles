@@ -1,0 +1,36 @@
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+eval "$(direnv hook zsh)"
+#echo $PROMPT
+
+function precmd() {
+  local EXIT="$?"
+
+
+#	local RCol='\[\e[0m\]'
+	local Rcol=$'\033[00m'
+	local Red=$'\033[01;31m'
+  local RedBold=$'\033[01;34m'
+	local Green=$'\033[01;32m'
+
+	local stat_color="${Green}"
+	local smiley=$'\U1f642'
+	if [ $EXIT != 0 ]; then
+		local stat_color="${Red}"
+		local smiley=$'\U1f631'
+	fi
+
+	local git_branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+	local userhost="${stat_color}%n@%m${Rcol}"
+	local working_dir="${RedBold}%~${Rcol}" #${Rcol}"
+	local stat_str="${stat_color}[${EXIT}]${Rcol} ${smiley}"
+	local chicken=$'\U1f99c'
+	local prompticon="${chicken} \$ "
+  local now="$(date +"%T")"
+  local beep="$(echo "\a")"
+  local newline=$'\n'
+
+	PROMPT="${userhost} ${working_dir} ${stat_str} ${now} ${git_branch}${newline}${prompticon}${beep}"
+}
